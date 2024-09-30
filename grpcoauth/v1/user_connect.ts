@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { Empty, MethodKind } from "@bufbuild/protobuf";
-import { GetAccessTokenInfoResponse, GetUserListResponse, GetUserMeResponse, UserLogoutResponse } from "./user_pb.js";
+import { GetAccessTokenInfoResponse, GetUserListRequest, GetUserListResponse, GetUserMeResponse, UserLogoutResponse } from "./user_pb.js";
 
 /**
  * @generated from service grpcoauth.v1.UserService
@@ -44,7 +44,7 @@ export const UserService = {
      */
     getUserList: {
       name: "GetUserList",
-      I: Empty,
+      I: GetUserListRequest,
       O: GetUserListResponse,
       kind: MethodKind.Unary,
     },
