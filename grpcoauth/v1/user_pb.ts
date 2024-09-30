@@ -232,6 +232,8 @@ export class GetUserListResponse extends Message<GetUserListResponse> {
  */
 export class GetUserListRequest extends Message<GetUserListRequest> {
   /**
+   * a
+   *
    * @generated from field: repeated string users = 1;
    */
   users: string[] = [];
