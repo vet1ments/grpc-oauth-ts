@@ -16,8 +16,6 @@ export class User extends Message<User> {
   id = "";
 
   /**
-   * we
-   *
    * @generated from field: string name = 2;
    */
   name = "";
@@ -66,43 +64,6 @@ export class User extends Message<User> {
 
   static equals(a: User | PlainMessage<User> | undefined, b: User | PlainMessage<User> | undefined): boolean {
     return proto3.util.equals(User, a, b);
-  }
-}
-
-/**
- * @generated from message grpcoauth.v1.test
- */
-export class test extends Message<test> {
-  /**
-   * @generated from field: string test = 5;
-   */
-  test = "";
-
-  constructor(data?: PartialMessage<test>) {
-    super();
-    proto3.util.initPartial(data, this);
-  }
-
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "grpcoauth.v1.test";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 5, name: "test", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ]);
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): test {
-    return new test().fromBinary(bytes, options);
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): test {
-    return new test().fromJson(jsonValue, options);
-  }
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): test {
-    return new test().fromJsonString(jsonString, options);
-  }
-
-  static equals(a: test | PlainMessage<test> | undefined, b: test | PlainMessage<test> | undefined): boolean {
-    return proto3.util.equals(test, a, b);
   }
 }
 
@@ -160,24 +121,9 @@ export class GetAccessTokenInfoResponse extends Message<GetAccessTokenInfoRespon
  */
 export class GetUserMeResponse extends Message<GetUserMeResponse> {
   /**
-   * @generated from field: string id = 1;
+   * @generated from field: grpcoauth.v1.User user = 1;
    */
-  id = "";
-
-  /**
-   * @generated from field: string name = 2;
-   */
-  name = "";
-
-  /**
-   * @generated from field: string phone_number = 3;
-   */
-  phoneNumber = "";
-
-  /**
-   * @generated from field: string nickname = 4;
-   */
-  nickname = "";
+  user?: User;
 
   constructor(data?: PartialMessage<GetUserMeResponse>) {
     super();
@@ -187,10 +133,7 @@ export class GetUserMeResponse extends Message<GetUserMeResponse> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "grpcoauth.v1.GetUserMeResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "phone_number", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "nickname", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "user", kind: "message", T: User },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetUserMeResponse {
@@ -244,6 +187,80 @@ export class UserLogoutResponse extends Message<UserLogoutResponse> {
 
   static equals(a: UserLogoutResponse | PlainMessage<UserLogoutResponse> | undefined, b: UserLogoutResponse | PlainMessage<UserLogoutResponse> | undefined): boolean {
     return proto3.util.equals(UserLogoutResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message grpcoauth.v1.GetUserListResponse
+ */
+export class GetUserListResponse extends Message<GetUserListResponse> {
+  /**
+   * @generated from field: repeated grpcoauth.v1.User users = 1;
+   */
+  users: User[] = [];
+
+  constructor(data?: PartialMessage<GetUserListResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "grpcoauth.v1.GetUserListResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "users", kind: "message", T: User, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetUserListResponse {
+    return new GetUserListResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetUserListResponse {
+    return new GetUserListResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetUserListResponse {
+    return new GetUserListResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetUserListResponse | PlainMessage<GetUserListResponse> | undefined, b: GetUserListResponse | PlainMessage<GetUserListResponse> | undefined): boolean {
+    return proto3.util.equals(GetUserListResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message grpcoauth.v1.GetUserListRequest
+ */
+export class GetUserListRequest extends Message<GetUserListRequest> {
+  /**
+   * @generated from field: repeated string users = 1;
+   */
+  users: string[] = [];
+
+  constructor(data?: PartialMessage<GetUserListRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "grpcoauth.v1.GetUserListRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "users", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetUserListRequest {
+    return new GetUserListRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetUserListRequest {
+    return new GetUserListRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetUserListRequest {
+    return new GetUserListRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetUserListRequest | PlainMessage<GetUserListRequest> | undefined, b: GetUserListRequest | PlainMessage<GetUserListRequest> | undefined): boolean {
+    return proto3.util.equals(GetUserListRequest, a, b);
   }
 }
 
