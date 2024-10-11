@@ -67,8 +67,6 @@ export class OauthApp extends Message<OauthApp> {
  */
 export class GetTokenRequest extends Message<GetTokenRequest> {
   /**
-   *  grpcoauth.v1.GrantType grant_type = 1;fwewwer
-   *
    * @generated from field: string grant_type = 1;
    */
   grantType = "";
