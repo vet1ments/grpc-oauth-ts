@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CallbackRequest, LoginRequest } from "./login_pb.js";
+import { CallbackRequest, GetLoginPageRequest, LoginRequest } from "./login_pb.js";
 import { HttpBody } from "../../google/api/httpbody_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
@@ -14,6 +14,21 @@ export const LoginService = {
   typeName: "oauthapp.v1.LoginService",
   methods: {
     /**
+     * buf:lint:ignore RPC_REQUEST_RESPONSE_UNIQUE
+     * buf:lint:ignore RPC_RESPONSE_STANDARD_NAME
+     *
+     * @generated from rpc oauthapp.v1.LoginService.GetLoginPage
+     */
+    getLoginPage: {
+      name: "GetLoginPage",
+      I: GetLoginPageRequest,
+      O: HttpBody,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * buf:lint:ignore RPC_REQUEST_RESPONSE_UNIQUE
+     * buf:lint:ignore RPC_RESPONSE_STANDARD_NAME
+     *
      * @generated from rpc oauthapp.v1.LoginService.Login
      */
     login: {
@@ -32,6 +47,9 @@ export const SocialCallbackService = {
   typeName: "oauthapp.v1.SocialCallbackService",
   methods: {
     /**
+     * buf:lint:ignore RPC_REQUEST_RESPONSE_UNIQUE
+     * buf:lint:ignore RPC_RESPONSE_STANDARD_NAME
+     *
      * @generated from rpc oauthapp.v1.SocialCallbackService.Callback
      */
     callback: {

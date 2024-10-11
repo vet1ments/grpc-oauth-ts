@@ -7,6 +7,43 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
+ * @generated from message oauthapp.v1.GetLoginPageRequest
+ */
+export class GetLoginPageRequest extends Message<GetLoginPageRequest> {
+  /**
+   * @generated from field: string continue = 1;
+   */
+  continue = "";
+
+  constructor(data?: PartialMessage<GetLoginPageRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "oauthapp.v1.GetLoginPageRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "continue", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLoginPageRequest {
+    return new GetLoginPageRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLoginPageRequest {
+    return new GetLoginPageRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLoginPageRequest {
+    return new GetLoginPageRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLoginPageRequest | PlainMessage<GetLoginPageRequest> | undefined, b: GetLoginPageRequest | PlainMessage<GetLoginPageRequest> | undefined): boolean {
+    return proto3.util.equals(GetLoginPageRequest, a, b);
+  }
+}
+
+/**
  * @generated from message oauthapp.v1.LoginRequest
  */
 export class LoginRequest extends Message<LoginRequest> {
