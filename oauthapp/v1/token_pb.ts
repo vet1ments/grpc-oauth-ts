@@ -139,6 +139,11 @@ export class GetTokenInfoRequest extends Message<GetTokenInfoRequest> {
  * @generated from message oauthapp.v1.GetTokenInfoResponse
  */
 export class GetTokenInfoResponse extends Message<GetTokenInfoResponse> {
+  /**
+   * @generated from field: string token = 2;
+   */
+  token = "";
+
   constructor(data?: PartialMessage<GetTokenInfoResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -147,6 +152,7 @@ export class GetTokenInfoResponse extends Message<GetTokenInfoResponse> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "oauthapp.v1.GetTokenInfoResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 2, name: "token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTokenInfoResponse {
