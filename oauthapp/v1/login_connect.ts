@@ -5,7 +5,7 @@
 
 import { CallbackRequest, GetLoginPageRequest, LoginRequest } from "./login_pb.js";
 import { HttpBody } from "../../google/api/httpbody_pb.js";
-import { MethodKind } from "@bufbuild/protobuf";
+import { Empty, MethodKind } from "@bufbuild/protobuf";
 
 /**
  * @generated from service oauthapp.v1.LoginService
@@ -34,6 +34,30 @@ export const LoginService = {
     login: {
       name: "Login",
       I: LoginRequest,
+      O: HttpBody,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * buf:lint:ignore RPC_REQUEST_RESPONSE_UNIQUE
+     * buf:lint:ignore RPC_RESPONSE_STANDARD_NAME
+     *
+     * @generated from rpc oauthapp.v1.LoginService.GetLogoutPage
+     */
+    getLogoutPage: {
+      name: "GetLogoutPage",
+      I: Empty,
+      O: HttpBody,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * buf:lint:ignore RPC_REQUEST_RESPONSE_UNIQUE
+     * buf:lint:ignore RPC_RESPONSE_STANDARD_NAME
+     *
+     * @generated from rpc oauthapp.v1.LoginService.Logout
+     */
+    logout: {
+      name: "Logout",
+      I: Empty,
       O: HttpBody,
       kind: MethodKind.Unary,
     },
